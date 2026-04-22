@@ -80,7 +80,12 @@ class GameTest {
 		assertEquals(131, game.score());
 	}
 	
-	
+
+	@Test
+	void test_genie() {
+		throwBall(12,10);
+		assertEquals(300, game.score());
+	}
 	
 	private void throwBall(int nbFois, int nbQuilleTombee) {
 		for( int i = 0; i < nbFois; i++) {
