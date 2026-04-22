@@ -2,11 +2,11 @@ package bowling;
 
 public class Game {
 	
-	private int roll =0;
+	private int rollIndex =0;
 	private int[] rolls = new int[22];
 	
 	void roll(int nbQuilles) {
-		rolls[roll++]= nbQuilles;
+		rolls[rollIndex++]= nbQuilles;
 	}
 	
 	int score() {
@@ -17,7 +17,7 @@ public class Game {
 				score += 10 + rolls[cursor+1]+rolls[cursor+2];
 				cursor += 1;
 			}
-			if(isSpare(cursor)) {
+			else if(isSpare(cursor)) {
 				score += 10 + rolls[cursor+2];
 				cursor += 2;
 			}else {
