@@ -30,6 +30,15 @@ class GameTest {
 		assertEquals(30,game.score());
 	}
 	
+	@Test
+	void test_spare() {
+		game.roll(7);
+		game.roll(3);
+		game.roll(4);
+		throwBall(17,0); 
+		assertEquals(18,game.score());
+	}
+	
 	private void throwBall(int nbFois, int nbQuilleTombee) {
 		for( int i = 0; i < nbFois; i++) {
 			game.roll(nbQuilleTombee );
