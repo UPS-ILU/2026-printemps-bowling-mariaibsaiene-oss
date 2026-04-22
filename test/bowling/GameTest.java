@@ -39,6 +39,15 @@ class GameTest {
 		assertEquals(18,game.score());
 	}
 	
+	@Test
+	void test_strike() {
+		game.roll(10);
+		game.roll(3);
+		game.roll(4);
+		throwBall(16,0);
+		assertEquals(24,game.score());
+	}
+	
 	private void throwBall(int nbFois, int nbQuilleTombee) {
 		for( int i = 0; i < nbFois; i++) {
 			game.roll(nbQuilleTombee );
